@@ -1,0 +1,5 @@
+topicName,topicUID,question,description,type,score,time,seniorityLevel,option1,option1IsCorrect,option2,option2IsCorrect,option3,option3IsCorrect,option4,option4IsCorrect
+Topic 1,T-1,statement question 1,description 1,Multiple Choice,1,30,Level 1,text option 1,TRUE,text option 2,TRUE,text option 3,FALSE,text option 4,FALSE
+Topic 1,T-1,"statement question 2  si contiene comas, debe ir entre doble comillas",description 2,Multiple Choice,1,90,Level 2,text option 1,TRUE,text option 2,FALSE,text option 3,FALSE,text option 4,FALSE
+Topic 2,T-2,statement question 3,description 3,Multiple Choice,1,60,Level 3,text option 1,TRUE,text option 2,FALSE,text option 3,FALSE,text option 4,TRUE
+Topic 2,T-2,statement question 4,description 3,Multiple Choice,1,30,Level 3,text option 1,TRUE,text option 2,FALSE,text option 3,FALSE,text option 4,TRUE

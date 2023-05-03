@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@Assessment/*": ["src/assessment/*"],
+      "@Question/*": ["src/question/*"],
+      "@Option/*": ["src/option/*"],
+      "@Core/*": ["src/core/*"],
+      "@Config/*": ["src/config/*"],
+      "@Seniority-Level/*": ["src/seniority-level/*"],
+      "@User/*": ["src/user/*"],
+      "@Role/*": ["src/role/*"],
+      "@Evaluation-Role/*": ["src/evaluation-role/*"],
+      "@Auth/*": ["src/auth/*"],
+      "@Competency/*": ["src/competency/*"],
+      "@Knowledge-Area/*": ["src/knowledge-area/*"],
+      "@Skill/*": ["src/skill/*"],
+      "@Topic/*": ["src/topic/*"],
+      "@Common/*": ["src/common/*"],
+      "@Internal-Endpoints/*": ["src/internal-endpoints/*"],
+      "@Master-File/*": ["src/master-file/*"],
+      "@Report/*": ["src/report/*"],
+      "@Category/*": ["src/category/*"],
+      "@AssessmentHistory/*": ["src/assessment-history/*"],
+      "@S3File/*": ["src/s3-file/*"]
+    }
+  }
+}

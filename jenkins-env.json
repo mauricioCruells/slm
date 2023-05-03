@@ -1,0 +1,78 @@
+{
+  "default": {
+    "enviroment": {
+      "ECR_ZONE": "us-east-1",
+      "ECR_CONTAINER_NAME": "slm",
+      "DOCKER_FILE_NAME": "Dockerfile",
+      "ECR_CREDENTIALS": "ECR_SLM_DEV",
+      "ARGOCD_APP_BASE_NAME": "slm-backend-argo-slm"
+    },
+    "credentials": {}
+  },
+  "dev": {
+    "enviroment": {
+      "ECR_URL": "457331780579.dkr.ecr.us-east-1.amazonaws.com/api-slm-development",
+      "ECR_CONTAINER_NAME": "api-slm-development",
+      "JIRA_ENV_ID": "AWS",
+      "JIRA_ENV_NAME": "AWS",
+      "JIRA_ENV_TYPE": "staging",
+      "IMAGE_TAG_PREFIX": "-rc",
+      "ARGO_PREFIX": "-development"
+    },
+    "vaults": {
+      "devEnv": {
+        "path": "argo-deployments/slm/ci-development",
+        "keys": {
+          "ENV_FILE": ".env",
+          "DB_PORT": "DB_PORT",
+          "DB_HOST": "DB_HOST",
+          "DB_NAME": "DB_NAME",
+          "DB_USER": "DB_USER",
+          "DB_PASSWORD": "DB_PASSWORD"
+        }
+      }
+    }
+  },
+  "staging": {
+    "enviroment": {
+      "ECR_CREDENTIALS": "ECR_SLM_STG",
+      "ECR_URL": "457331780579.dkr.ecr.us-east-1.amazonaws.com/api-slm-staging",
+      "ECR_CONTAINER_NAME": "api-slm-staging",
+      "JIRA_ENV_ID": "AWS",
+      "JIRA_ENV_NAME": "AWS",
+      "JIRA_ENV_TYPE": "staging",
+      "IMAGE_TAG_PREFIX": "-stg",
+      "ARGO_PREFIX": "-staging"
+    },
+    "vaults": {
+      "stgEnv": {
+        "path": "argo-deployments/slm/ci-staging",
+        "keys": {
+          "ENV_FILE": ".env",
+          "DB_PORT": "DB_PORT",
+          "DB_HOST": "DB_HOST",
+          "DB_NAME": "DB_NAME",
+          "DB_USER": "DB_USER",
+          "DB_PASSWORD": "DB_PASSWORD"
+        }
+      }
+    }
+  },
+  "production": {
+    "enviroment": {
+      "JIRA_ENV_ID": "AWS",
+      "JIRA_ENV_NAME": "AWS",
+      "JIRA_ENV_TYPE": "production",
+      "IMAGE_TAG_PREFIX": "-release",
+      "ARGO_PREFIX": "-prod"
+    },
+    "vaults": {
+      "devEnv": {
+        "path": "argo-deployments/slm/ci-production",
+        "keys": {
+          "ENV_FILE": ".env"
+        }
+      }
+    }
+  }
+}

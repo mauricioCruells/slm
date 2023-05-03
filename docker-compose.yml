@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  slm-api-backend:
+    build:
+      context: .
+      target: development
+    container_name: slm_api_backend
+    image: slm_api_backend
+    command: npm run start:debug
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - ${API_PORT}:${PORT:-3000}
+      - 9229:9229
+    networks:
+      - slm-api-network
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - slm-api-db
+  slm-api-db:
+    container_name: slm_api_postgres
+    image: postgres:14
+    networks:
+      - slm-api-network
+    ports:
+      - ${DB_PORT:-5432}:5432
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+      PG_DATA: /var/lib/postgresql/data
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+networks:
+  slm-api-network:
+    driver: bridge
+
+volumes:
+  pgdata:
